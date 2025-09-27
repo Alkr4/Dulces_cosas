@@ -1,0 +1,9 @@
+[
+  { "model": "Accounts.Role", "pk": 1, "fields": { "name": "Administrador", "description": "Acceso completo" } },
+  { "model": "Accounts.Role", "pk": 2, "fields": { "name": "Operador De Compras", "description": "Acceso limitado a compras" } },
+    { "model": "Accounts.Role", "pk": 3, "fields": { "name": "Operador De Ventas", "description": "Acceso limitado a ventas" } },
+    { "model": "Accounts.Role", "pk": 4, "fields": { "name": "Operador De Inventario", "description": "Acceso limitado a Inventario" } },
+    { "model": "Accounts.Role", "pk": 5, "fields": { "name": "Operador De Produccion", "description": "Acceso limitado a Produccion" } },
+    { "model": "Accounts.Role", "pk": 6, "fields": { "name": "Analista Financiero", "description": "Acceso limitado a Finanzas" } }
+
+]

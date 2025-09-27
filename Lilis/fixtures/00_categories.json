@@ -1,0 +1,4 @@
+[
+  { "model": "Products.Category", "pk": 1, "fields": { "name": "Chocolates", "description": "Chocolate negro, blanco, amargo, etc" } },
+  { "model": "Products.Category", "pk": 2, "fields": { "name": "Snacks", "description": "Snickers, KitKat, etc" } }
+]
