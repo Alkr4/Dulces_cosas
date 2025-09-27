@@ -7,7 +7,7 @@ class Role(models.Model):
     privilege_level = models.IntegerField(default=0)
 
     def __str__(self):
-        return self.nombre
+        return self.name
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
