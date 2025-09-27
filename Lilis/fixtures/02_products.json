@@ -1,0 +1,47 @@
+[
+  {
+    "model": "Products.Product",
+    "pk": 1,
+    "fields": {
+      "name": "Chocolate Negro 70%",
+      "sku": "CHN70",
+      "description": "Chocolate negro 70% cacao",
+      "category": 1,
+      "min_stock": "10.00",
+      "max_stock": "100.00",
+      "current_stock": "50.00",
+      "expiration_date": "2025-12-31",
+      "created_at": "2025-09-27T12:00:00Z"
+    }
+  },
+  {
+    "model": "Products.Product",
+    "pk": 2,
+    "fields": {
+      "name": "KitKat",
+      "sku": "KITKAT001",
+      "description": "Barra de chocolate con galleta",
+      "category": 2,
+      "min_stock": "20.00",
+      "max_stock": "200.00",
+      "current_stock": "75.00",
+      "expiration_date": "2025-11-30",
+      "created_at": "2025-09-27T12:05:00Z"
+    }
+  },
+  {
+    "model": "Products.Product",
+    "pk": 3,
+    "fields": {
+      "name": "Snickers",
+      "sku": "SNICK001",
+      "description": "Barra de chocolate con caramelo y cacahuate",
+      "category": 2,
+      "min_stock": "15.00",
+      "max_stock": "150.00",
+      "current_stock": "60.00",
+      "expiration_date": "2026-01-15",
+      "created_at": "2025-09-27T12:10:00Z"
+    }
+  }
+]
