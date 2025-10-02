@@ -18,6 +18,7 @@ class RawMaterial(models.Model):
 
     def __str__(self):
         return self.name
+    
 class Category(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField(blank=True, null=True)
@@ -35,8 +36,36 @@ class Product(models.Model):
     max_stock = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
     current_stock = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
     expiration_date = models.DateField(blank=True, null=True)
-    created_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField()
 
     def __str__(self):
         return f'{self.name} - {self.sku}'
     
+#Lote
+class Batch(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    batch_code = models.CharField(max_length=100, unique=True)
+    expiration_date = models.DateField()
+    initial_quantity = models.DecimalField(max_digits=10, decimal_places=2)
+    current_quantity = models.DecimalField(max_digits=10, decimal_places=2)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.product.name} - {self.batch_code}"
+
+#MateriaProveedor    
+class RawMaterialSupplier(models.Model):
+    raw_material = models.ForeignKey(RawMaterial, on_delete=models.CASCADE)
+    supplier = models.ForeignKey(Supplier, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f'{self.raw_material.name} de {self.supplier.bussiness_name} - {self.supplier.rut}'
+    
+#HistorialPreciosProveedor
+class SupplierPriceHistory(models.Model):
+    raw_material_supplier = models.ForeignKey(RawMaterialSupplier, on_delete=models.CASCADE)
+    price = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
+    date = models.DateField()
+
+    def __str__(self):
+        return f'{self.raw_material_supplier} - ${self.price} el {self.date}'
