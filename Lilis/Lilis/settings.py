@@ -15,7 +15,7 @@ load_dotenv(BASE_DIR / '.env')
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'dev-unsafe')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DJANGO_DEBUG', 'False').lower() == 'true'
+DEBUG = os.getenv('DJANGO_DEBUG', 'True').lower() == 'true'
 
 ALLOWED_HOSTS = []
 
@@ -80,6 +80,7 @@ if ENGINE == 'mysql':
             'PORT': os.getenv('DB_PORT'),
             'OPTIONS':{
                 'charset': 'utf8mb4',
+                'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
             }
         }
     }
